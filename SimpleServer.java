@@ -8,7 +8,8 @@ public class SimpleServer {
 		ServerSocket serverSocket = new ServerSocket(PORT);
 		while (true) {
 			Socket socket = serverSocket.accept();
-
+			System.out.println("Only socket's connection has new data, it will go to this line.");
+			System.out.println(socket.getInetAddress().toString()); // Client's ip
 			DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 			DataInputStream dataInputSream = new DataInputStream(socket.getInputStream());
 			String request = dataInputSream.readUTF();

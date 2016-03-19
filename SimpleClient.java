@@ -4,7 +4,8 @@ import java.io.*;
 
 public class SimpleClient {
 	public static void main(String[] args) throws IOException {
-		Socket socket = new Socket("localhost", 1254);
+		String serverIp = "192.168.31.234";
+		Socket socket = new Socket(serverIp, 1254);
 		DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
 		DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 		String request = "I am client";
